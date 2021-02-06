@@ -1,0 +1,30 @@
+<article class="w-3/12 p-4 my-2 mx-10 bg-white rounded-lg shadow border border-primary">
+  <header class="mb-2">
+    <h2 class="text-xl color-primary">Owner: <%= asset.owner %></h2>
+  </header>
+
+  <%= image_tag asset.image, class: "w-full h-48 rounded-md", alt: "An image that is associated with this asset" %>
+
+  <main class="my-2">
+    <section class="w-full flex justify-between items-center mb-2 ">
+      <h1 class="text-xl color-secondary">Type: <%= asset.assetable.class.name.demodulize %></h1>
+
+      <span class="font-medium text-gray-400">Area: <%= asset.sqmt %></span>
+    </section>
+
+    <%= render asset.assetable, locals: {"#{asset.assetable.class}": asset.assetable} %>
+  </main>
+
+  <footer class="flex w-full justify-between items-center my-2">
+    <div>
+      <span class="color-secondary">Price: </span>
+      <span class="font-medium text-gray-400"><%= asset.price %></span>
+    </div>
+
+    <div>
+      <button class="bg-primary rounded-md text-white text-md px-2 py-1 ">
+        Buy
+      </button>
+    </div>
+  </footer>
+</article>

@@ -1,0 +1,65 @@
+<%= form_with(model: house, local: true, class: "w-6/12 rounded-md shadow border border-primary p-4 bg-white flex flex-col justify-center items-center") do |form| %>
+  <% if house.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(house.errors.count, "error") %> prohibited this house from being saved:</h2>
+
+      <ul>
+        <% house.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <header class="text-left">
+    <h1 class="text--green font-medium text-2xl">Add a new house</h1>
+  </header>
+
+  <div class="w-8/12 flex flex-col justify-center">
+    <div class="w-full flex flex-col my-2">
+      <%= form.label :owner %>
+      <%= form.text_field :owner %>
+    </div>
+
+    <div class="w-full flex flex-col my-2">
+      <%= form.label :address, "email Address" %>
+      <%= form.text_field :address %>
+    </div>
+
+    <div class="w-full flex flex-col my-2">
+      <%= form.label :rooms %>
+      <%= form.text_field :rooms %>
+    </div>
+
+    <div class="w-full flex flex-col my-2">
+      <%= form.label :sqmt %>
+      <%= form.text_field :sqmt %>
+    </div>
+
+    <div class="w-full flex flex-col my-2">
+      <%= form.label :floors %>
+      <%= form.text_field :floors %>
+    </div>
+
+    <div class="w-full flex items-center my-2">
+      <%= form.label :air_cond %>
+      <%= form.check_box :air_cond, class: "w-5 mx-2" %>
+    </div>
+
+    <div class="w-full flex flex-col">
+      <%= form.label :price %>
+      <%= form.text_field :price %>
+    </div>
+
+    <div class="w-full flex flex-col">
+      <%= form.label :image %>
+      <%= form.file_field :image %>
+    </div>
+
+    <div class="actions">
+      <button class="bg-primary text-base my-2 text-white px-4 py-2 rounded-md">
+        Add
+      </button>
+    </div>
+  </div>
+<% end %>

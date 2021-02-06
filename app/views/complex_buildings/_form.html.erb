@@ -1,0 +1,52 @@
+<%= form_with(model: complex_building, local: true, class: "w-6/12 rounded-md shadow border border-primary p-4 bg-white flex flex-col justify-center items-center") do |form| %>
+  <% if complex_building.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(complex_building.errors.count, "error") %> prohibited this complex_building from being saved:</h2>
+
+      <ul>
+        <% complex_building.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <header>
+    <h1 class="text--green font-medium text-2xl">Add a new complex building</h1>
+  </header>
+  <div class="w-8/12 flex flex-col items-center">
+    <div class="w-full flex flex-col my-2">
+      <%= form.label :owner %>
+      <%= form.text_field :owner %>
+    </div>
+
+    <div class="w-full flex flex-col my-2">
+      <%= form.label :address %>
+      <%= form.email_field :address %>
+    </div>
+
+    <div class="w-full flex flex-col my-2">
+      <%= form.label :units %>
+      <%= form.number_field :units %>
+    </div>
+
+    <div class="w-full flex flex-col my-2">
+      <%= form.label :sqmt %>
+      <%= form.number_field :sqmt %>
+    </div>
+
+    <div class="w-full flex flex-col my-2">
+      <%= form.label :price %>
+      <%= form.text_field :price %>
+    </div>
+
+
+    <div class="w-full flex flex-col my-2">
+      <%= form.label :image %>
+      <%= form.file_field :image %>
+    </div>
+    <div class="actions">
+      <button class="bg-primary text-base my-2 text-white rounded-md">Add new complex building</button>
+    </div>
+  </div>
+<% end %>

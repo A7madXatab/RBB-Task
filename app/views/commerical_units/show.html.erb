@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Owner:</strong>
+  <%= @commerical_unit.owner %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @commerical_unit.address %>
+</p>
+
+<p>
+  <strong>Shops:</strong>
+  <%= @commerical_unit.shops %>
+</p>
+
+<p>
+  <strong>Sqmt:</strong>
+  <%= @commerical_unit.sqmt %>
+</p>
+
+<p>
+  <strong>Parking:</strong>
+  <%= @commerical_unit.parking %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @commerical_unit.price %>
+</p>
+
+<%= link_to 'Edit', edit_commerical_unit_path(@commerical_unit) %> |
+<%= link_to 'Back', commerical_units_path %>

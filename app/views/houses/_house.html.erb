@@ -1,0 +1,17 @@
+<section class="w-full my-2 text-gray-600">
+  <div class="flex">
+              <span>
+                Has AC:
+              </span>
+    <% if house.air_cond %>
+      <svg class="w-6 h-6 text--green" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+      </svg>
+    <% else %>
+      <svg class="w-6 h-6 text-red-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+      </svg>
+    <% end %>
+  </div>
+  <p>Floors: <span><%= house.floors %></span></p>
+</section>

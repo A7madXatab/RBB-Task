@@ -1,0 +1,59 @@
+<%= form_with(model: commerical_unit, local: true, class: "w-6/12 rounded-md shadow border border-primary p-4 bg-white flex flex-col justify-center items-center") do |form| %>
+  <% if commerical_unit.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(commerical_unit.errors.count, "error") %> prohibited this commerical_unit from being saved:</h2>
+
+      <ul>
+        <% commerical_unit.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <header>
+    <h1 class="text--green font-medium text-2xl">Add a new commercial unit</h1>
+  </header>
+
+  <div class="w-8/12 flex flex-col justify-center">
+
+    <div class="w-full flex flex-col my-2">
+      <%= form.label :owner %>
+      <%= form.text_field :owner %>
+    </div>
+
+    <div class="w-full flex flex-col my-2">
+      <%= form.label :address %>
+      <%= form.email_field :address %>
+    </div>
+
+    <div class="w-full flex flex-col my-2">
+      <%= form.label :shops %>
+      <%= form.number_field :shops %>
+    </div>
+
+    <div class="w-full flex flex-col my-2">
+      <%= form.label :sqmt %>
+      <%= form.number_field :sqmt %>
+    </div>
+
+    <div class="w-full flex flex-col my-2">
+      <%= form.label :parking %>
+      <%= form.number_field :parking %>
+    </div>
+
+    <div class="w-full flex flex-col my-2">
+      <%= form.label :price %>
+      <%= form.text_field :price %>
+    </div>
+
+    <div class="w-full flex flex-col my-2">
+      <%= form.label :image %>
+      <%= form.file_field :image %>
+    </div>
+
+    <div class="actions">
+      <button class="bg-primary text-base my-2 text-white rounded-md px-4 py-2">Add new commercial unit</button>
+    </div>
+  </div>
+<% end %>

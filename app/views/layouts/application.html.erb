@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>RbblabTask</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_pack_tag "application", "data-turbo-track": "reload" %>
+  </head>
+
+  <body class="bg-body h-screen relative">
+  <header class="bg-white px-4 py-2 mb-4 border-b border-gray-300">
+    <nav class="w-full flex justify-between items-center px-2 py-2">
+      <h1 class="text-2xl color-primary font-medium">
+        <a href="/">RBBTask</a>
+      </h1>
+    </nav>
+
+  </header>
+
+
+  <div class="w-full flex flex-col justify-center items-center">
+    <%= yield %>
+  </div>
+  </body>
+</html>
